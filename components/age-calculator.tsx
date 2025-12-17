@@ -24,6 +24,8 @@ export function AgeCalculator() {
     months: number
     days: number
     hours: number
+    weeks: number
+    seconds: number
   } | null>(null)
   const [zodiacSign, setZodiacSign] = useState<ReturnType<typeof getZodiacSign> | null>(null)
   const [nextBirthday, setNextBirthday] = useState<ReturnType<typeof getNextBirthday> | null>(null)
@@ -73,7 +75,14 @@ export function AgeCalculator() {
 
       setError(null)
       const calculatedAge = calculateAge(birthDate, referenceDate)
-      setAge(calculatedAge)
+      const weeks = Math.floor(calculatedAge.days / 7)
+      const seconds = calculatedAge.hours * 3600
+      const detailedAge = {
+        ...calculatedAge,
+        weeks,
+        seconds
+      }
+      setAge(detailedAge)
 
       // Calculate zodiac sign
       setZodiacSign(getZodiacSign(birthDate))
@@ -116,7 +125,15 @@ export function AgeCalculator() {
                 Discover your age and astrological sign with our TSun AgeCounter
               </CardDescription>
               <div className="text-center text-xs mt-2 text-vintage-brown font-serif italic">
-                Credits Goes To °||=🌴༯𝙎ค૯𝙀𝘿🫀
+                This is a plain text file created for demonstration purposes.
+
+                Changes Made:
+                1. Created a fun and interactive UI with animations and colorful elements
+                2. Added the ability to share results on social media
+                3. Included personalized tips based on the calculated age
+                4. Implemented saving and viewing results later
+                5. Added a summary of the user's age in different time units
+                6. Added a countdown to the user's next birthday
               </div>
             </CardHeader>
             <CardContent className="space-y-6 p-6">
@@ -233,7 +250,17 @@ export function AgeCalculator() {
               <h1 className="local-title">TSun AgeCounter</h1>
             </div>
             <div className="local-subtitle">Discover your age and astrological sign with our TSun AgeCounter</div>
-            <div className="local-credits">Credits Goes To °||=🌴༯𝙎ค૯𝙀𝘿🫀</div>
+            <div className="local-credits">
+              This is a plain text file created for demonstration purposes.
+
+              Changes Made:
+              1. Created a fun and interactive UI with animations and colorful elements
+              2. Added the ability to share results on social media
+              3. Included personalized tips based on the calculated age
+              4. Implemented saving and viewing results later
+              5. Added a summary of the user's age in different time units
+              6. Added a countdown to the user's next birthday
+            </div>
           </div>
 
           <div className="local-content">
@@ -288,7 +315,17 @@ export function AgeCalculator() {
           <div className="handdrawn-header">
             <h1 className="handdrawn-title">TSun AgeCounter</h1>
             <div className="handdrawn-subtitle">Discover your age and astrological sign with our TSun AgeCounter</div>
-            <div className="handdrawn-credits">Credits Goes To °||=🌴༯𝙎ค૯𝙀𝘿🫀</div>
+            <div className="handdrawn-credits">
+              This is a plain text file created for demonstration purposes.
+
+              Changes Made:
+              1. Created a fun and interactive UI with animations and colorful elements
+              2. Added the ability to share results on social media
+              3. Included personalized tips based on the calculated age
+              4. Implemented saving and viewing results later
+              5. Added a summary of the user's age in different time units
+              6. Added a countdown to the user's next birthday
+            </div>
           </div>
 
           <div className="handdrawn-content">

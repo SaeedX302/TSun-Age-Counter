@@ -27,6 +27,8 @@ export function AgeDisplay({ age }: AgeDisplayProps) {
     { label: "Months", value: age.months, symbol: "M" },
     { label: "Days", value: age.days, symbol: "D" },
     { label: "Hours", value: age.hours, symbol: "H" },
+    { label: "Weeks", value: age.weeks, symbol: "W" },
+    { label: "Seconds", value: age.seconds, symbol: "S" },
   ]
 
   return (

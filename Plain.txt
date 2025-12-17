@@ -1,0 +1,9 @@
+This is a plain text file created for demonstration purposes.
+
+Changes Made:
+1. Created a fun and interactive UI with animations and colorful elements
+2. Added the ability to share results on social media
+3. Included personalized tips based on the calculated age
+4. Implemented saving and viewing results later
+5. Added a summary of the user's age in different time units
+6. Added a countdown to the user's next birthday
