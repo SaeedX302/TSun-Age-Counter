@@ -12,9 +12,9 @@
     <a href="#features"><strong>Explore the Docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SaeedX302/v0-age-calculator-design/issues">Report Bug</a>
+    <a href="https://github.com/SaeedX302/TSun-Age-Counter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/SaeedX302/v0-age-calculator-design/issues">Request Feature</a>
+    <a href="https://github.com/SaeedX302/TSun-Age-Counter/issues">Request Feature</a>
   </p>
 </div>
 
