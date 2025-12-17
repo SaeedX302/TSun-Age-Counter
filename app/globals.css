@@ -2,1026 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-baskerville), serif;
-  background-color: #f5f1e8;
-  color: #3a3226;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* ===== VINTAGE THEME (DEFAULT) ===== */
-.theme-vintage {
-  --background: 39 38% 95%;
-  --foreground: 35 20% 22%;
-  --card: 39 38% 95%;
-  --card-foreground: 35 20% 22%;
-  --popover: 39 38% 95%;
-  --popover-foreground: 35 20% 22%;
-  --primary: 30 40% 35%;
-  --primary-foreground: 39 38% 95%;
-  --secondary: 35 25% 85%;
-  --secondary-foreground: 35 20% 22%;
-  --muted: 35 25% 90%;
-  --muted-foreground: 35 20% 45%;
-  --accent: 25 30% 75%;
-  --accent-foreground: 35 20% 22%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 39 38% 95%;
-  --border: 35 25% 75%;
-  --input: 35 25% 75%;
-  --ring: 35 20% 22%;
-  --radius: 0.25rem;
-}
-
-/* ===== FUTURISTIC THEME ===== */
-.theme-futuristic {
-  --background: 240 50% 5%;
-  --foreground: 180 100% 80%;
-  --card: 240 30% 10%;
-  --card-foreground: 180 100% 80%;
-  --popover: 240 30% 10%;
-  --popover-foreground: 180 100% 80%;
-  --primary: 180 100% 50%;
-  --primary-foreground: 240 50% 5%;
-  --secondary: 270 100% 50%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 240 30% 20%;
-  --muted-foreground: 180 30% 60%;
-  --accent: 300 100% 50%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 180 50% 30%;
-  --input: 180 50% 30%;
-  --ring: 180 100% 50%;
-  --radius: 0.5rem;
-}
-
-/* ===== LOCAL THEME ===== */
-.theme-local {
-  --background: 30 80% 90%;
-  --foreground: 20 80% 20%;
-  --card: 40 70% 95%;
-  --card-foreground: 20 80% 20%;
-  --popover: 40 70% 95%;
-  --popover-foreground: 20 80% 20%;
-  --primary: 20 90% 40%;
-  --primary-foreground: 40 70% 95%;
-  --secondary: 30 50% 60%;
-  --secondary-foreground: 20 80% 20%;
-  --muted: 30 30% 85%;
-  --muted-foreground: 20 40% 40%;
-  --accent: 10 80% 50%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 80% 40%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 30 60% 60%;
-  --input: 30 60% 60%;
-  --ring: 20 90% 40%;
-  --radius: 1rem;
-}
-
-/* ===== HAND DRAWN THEME ===== */
-.theme-handdrawn {
-  --background: 60 30% 96%;
-  --foreground: 240 10% 20%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 20%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 20%;
-  --primary: 240 50% 50%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 120 40% 50%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 60 20% 90%;
-  --muted-foreground: 240 5% 40%;
-  --accent: 30 90% 60%;
-  --accent-foreground: 240 10% 20%;
-  --destructive: 0 70% 50%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 240 10% 80%;
-  --input: 240 10% 80%;
-  --ring: 240 50% 50%;
-  --radius: 0.125rem;
-}
-
 @layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 47 95% 57%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.75rem;
+
+    --font-playfair: 'Playfair Display', serif;
+    --font-baskerville: 'Libre Baskerville', serif;
+  }
+
+  /* Theme: Masterpiece (Default) */
+  [data-theme="masterpiece"] {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 47 95% 57%;
+    /* Gold */
+    --primary-foreground: 240 5.9% 10%;
+    --card: 240 10% 5%;
+    --radius: 1rem;
+  }
+
+  /* Theme: Steampunk */
+  [data-theme="steampunk"] {
+    --background: 30 20% 15%;
+    /* Dark Leather */
+    --foreground: 35 40% 80%;
+    /* Parchment */
+    --primary: 35 80% 50%;
+    /* Copper/Bronze */
+    --primary-foreground: 0 0% 10%;
+    --card: 30 25% 12%;
+    --border: 35 60% 40%;
+    --radius: 0.25rem;
+  }
+
+  /* Theme: Monochrome */
+  [data-theme="monochrome"] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --card: 0 0% 5%;
+    --border: 0 0% 30%;
+    --radius: 0rem;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-playfair), serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 }
 
-/* ===== THEME-SPECIFIC BACKGROUNDS ===== */
-
-/* Vintage Paper Background */
-.theme-vintage body {
-  background-color: #f5f1e8;
-  background-image: none; /* Remove complex background image */
-}
-
-/* Futuristic Background */
-.theme-futuristic body {
-  background-color: #0a1525;
-  background-image: none; /* Remove complex background image */
-}
-
-/* Local Background */
-.theme-local body {
-  background-color: #fff5e6;
-  background-image: none; /* Remove complex background image */
-}
-
-/* Hand Drawn Background */
-.theme-handdrawn body {
-  background-color: #fffdf7;
-  background-image: none; /* Remove complex background image */
-}
-
-/* ===== THEME-SPECIFIC CARD STYLES ===== */
-
-/* Vintage Card Styles */
-.theme-vintage .vintage-card {
-  background-color: rgba(245, 241, 232, 0.9);
-  border: 1px solid #c0b19b;
-  box-shadow: 0 4px 8px rgba(101, 84, 63, 0.15);
-  position: relative;
-}
-
-.theme-vintage .vintage-card::before {
-  display: none; /* Remove decorative backgrounds */
-}
-
-/* Futuristic Card Styles */
-.theme-futuristic .vintage-card {
-  background: linear-gradient(135deg, rgba(20, 30, 60, 0.8), rgba(10, 15, 30, 0.9));
-  border: 1px solid rgba(0, 200, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3), inset 0 0 10px rgba(0, 200, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.theme-futuristic .vintage-card::before {
-  display: none; /* Remove decorative backgrounds */
-}
-
-/* Local Card Styles */
-.theme-local .vintage-card {
-  background-color: #fff9f0;
-  border: 3px solid #e8a95b;
-  border-radius: 15px;
-  box-shadow: 5px 5px 0 #b86d1d;
-  position: relative;
-}
-
-.theme-local .vintage-card::before {
-  display: none; /* Remove decorative backgrounds */
-}
-
-/* Hand Drawn Card Styles */
-.theme-handdrawn .vintage-card {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 3px;
-  box-shadow: 3px 3px 0 #000000;
-  position: relative;
-  filter: url("#pencil-filter");
-}
-
-.theme-handdrawn .vintage-card::before {
-  display: none; /* Remove decorative backgrounds */
-}
-
-/* ===== THEME TOGGLE BUTTON STYLES ===== */
-.theme-vintage .theme-toggle-button {
-  background-color: #d6c9b8;
-  border: 1px solid #a89781;
-  color: #5c4b37;
-}
-
-.theme-futuristic .theme-toggle-button {
-  background: linear-gradient(135deg, #0a1525, #162040);
-  border: 1px solid rgba(0, 200, 255, 0.5);
-  color: #00c8ff;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
-}
-
-.theme-local .theme-toggle-button {
-  background-color: #fff0d9;
-  border: 2px solid #e8a95b;
-  color: #b86d1d;
-  box-shadow: 3px 3px 0 #b86d1d;
-}
-
-.theme-handdrawn .theme-toggle-button {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  color: #000000;
-  box-shadow: 2px 2px 0 #000000;
-}
-
-/* ===== THEME DROPDOWN STYLES ===== */
-.theme-vintage .theme-dropdown {
-  background-color: #f5f1e8;
-  border: 1px solid #c0b19b;
-}
-
-.theme-futuristic .theme-dropdown {
-  background: linear-gradient(135deg, #0a1525, #162040);
-  border: 1px solid rgba(0, 200, 255, 0.5);
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
-}
-
-.theme-local .theme-dropdown {
-  background-color: #fff9f0;
-  border: 2px solid #e8a95b;
-  box-shadow: 3px 3px 0 #b86d1d;
-}
-
-.theme-handdrawn .theme-dropdown {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0 #000000;
-}
-
-/* ===== THEME MENU ITEM STYLES ===== */
-.theme-vintage .theme-menu-item {
-  color: #5c4b37;
-}
-
-.theme-futuristic .theme-menu-item {
-  color: #00c8ff;
-  border-bottom: 1px solid rgba(0, 200, 255, 0.2);
-}
-
-.theme-local .theme-menu-item {
-  color: #b86d1d;
-  border-bottom: 1px solid rgba(232, 169, 91, 0.3);
-}
-
-.theme-handdrawn .theme-menu-item {
-  color: #000000;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-}
-
-/* ===== THEME-SPECIFIC TYPOGRAPHY ===== */
-.theme-vintage .vintage-title {
-  font-family: var(--font-playfair), serif;
-  font-weight: 700;
-  color: #5c4b37;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.05em;
-}
-
-.theme-futuristic .vintage-title {
-  font-family: var(--font-playfair), serif;
-  font-weight: 700;
-  color: #00c8ff;
-  text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.theme-local .vintage-title {
-  font-family: var(--font-playfair), serif;
-  font-weight: 700;
-  color: #b86d1d;
-  text-shadow: 1px 1px 0 #fff9f0;
-  letter-spacing: 0.05em;
-}
-
-.theme-handdrawn .vintage-title {
-  font-family: var(--font-playfair), serif;
-  font-weight: 700;
-  color: #000000;
-  letter-spacing: 0.05em;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-}
-
-/* ===== BIZARRE DECORATIVE ELEMENTS ===== */
-.theme-vintage .vintage-border::before,
-.theme-futuristic .vintage-border::before,
-.theme-local .vintage-border::before,
-.theme-handdrawn .vintage-border::before {
-  display: none; /* Remove decorative borders */
-}
-
-/* ===== STRANGE ANIMATIONS ===== */
+/* Animations */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+  0% {
+    transform: translateY(0px);
   }
+
   50% {
-    transform: translateY(-5px);
-  }
-}
-
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-  will-change: transform;
-}
-
-/* Remove the typewriter animation which can cause lag */
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  /* Remove animation */
-}
-
-/* ===== BIZARRE BUTTON STYLES ===== */
-.theme-vintage .vintage-button {
-  background-color: #d6c9b8;
-  border: 1px solid #a89781;
-  color: #5c4b37;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(101, 84, 63, 0.2);
-}
-
-.theme-futuristic .vintage-button {
-  background: linear-gradient(135deg, rgba(0, 200, 255, 0.2), rgba(0, 100, 200, 0.3));
-  border: 1px solid rgba(0, 200, 255, 0.5);
-  color: #00c8ff;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.theme-local .vintage-button {
-  background-color: #fff0d9;
-  border: 2px solid #e8a95b;
-  color: #b86d1d;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  box-shadow: 3px 3px 0 #b86d1d;
-}
-
-.theme-handdrawn .vintage-button {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  color: #000000;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  box-shadow: 2px 2px 0 #000000;
-  position: relative;
-}
-
-.theme-handdrawn .vintage-button::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 1px dashed rgba(0, 0, 0, 0.3);
-  pointer-events: none;
-}
-
-/* ===== BIZARRE INPUT STYLES ===== */
-.theme-vintage .vintage-input {
-  background-color: #f8f5ef;
-  border: 1px solid #c0b19b;
-  color: #5c4b37;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem;
-}
-
-.theme-futuristic .vintage-input {
-  background-color: rgba(10, 20, 40, 0.8);
-  border: 1px solid rgba(0, 200, 255, 0.5);
-  color: #00c8ff;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
-}
-
-.theme-local .vintage-input {
-  background-color: #fff9f0;
-  border: 2px solid #e8a95b;
-  color: #b86d1d;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem;
-  box-shadow: 3px 3px 0 rgba(184, 109, 29, 0.3);
-}
-
-.theme-handdrawn .vintage-input {
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  color: #000000;
-  font-family: var(--font-baskerville), serif;
-  padding: 0.5rem;
-  box-shadow: 2px 2px 0 #000000;
-}
-
-/* ===== CUSTOM CALENDAR STYLES ===== */
-.custom-calendar {
-  --calendar-padding: 1.25rem;
-  padding: var(--calendar-padding);
-  font-family: var(--font-baskerville), serif;
-}
-
-.theme-vintage .custom-calendar .rdp-months {
-  background: rgba(245, 241, 232, 0.9);
-  background-image: url("/vintage-paper.png");
-  background-size: cover;
-  background-blend-mode: overlay;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  border: 1px solid #c0b19b;
-}
-
-.theme-futuristic .custom-calendar .rdp-months {
-  background: linear-gradient(135deg, rgba(10, 20, 40, 0.9), rgba(20, 30, 60, 0.9));
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(0, 200, 255, 0.5);
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-}
-
-.theme-futuristic .custom-calendar .rdp-day {
-  color: #00c8ff;
-}
-
-.theme-futuristic .custom-calendar .rdp-day:hover {
-  background-color: rgba(0, 200, 255, 0.2);
-}
-
-.theme-futuristic .custom-calendar .rdp-day_selected {
-  background: linear-gradient(135deg, rgba(0, 100, 255, 0.7), rgba(0, 200, 255, 0.7)) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
-}
-
-.theme-futuristic .custom-calendar .rdp-head_cell {
-  color: rgba(0, 200, 255, 0.7);
-}
-
-.theme-futuristic .custom-calendar .rdp-nav_button {
-  color: #00c8ff;
-}
-
-.theme-futuristic .custom-calendar .rdp-caption {
-  color: #00c8ff;
-}
-
-.theme-local .custom-calendar .rdp-months {
-  background: #fff9f0;
-  border: 2px solid #e8a95b;
-  box-shadow: 5px 5px 0 #b86d1d;
-}
-
-.theme-local .custom-calendar .rdp-day {
-  color: #b86d1d;
-}
-
-.theme-local .custom-calendar .rdp-day:hover {
-  background-color: rgba(232, 169, 91, 0.2);
-}
-
-.theme-local .custom-calendar .rdp-day_selected {
-  background-color: #e8a95b !important;
-  color: #ffffff !important;
-  box-shadow: 2px 2px 0 #b86d1d;
-}
-
-.theme-local .custom-calendar .rdp-head_cell {
-  color: #b86d1d;
-}
-
-.theme-local .custom-calendar .rdp-nav_button {
-  color: #b86d1d;
-}
-
-.theme-local .custom-calendar .rdp-caption {
-  color: #b86d1d;
-}
-
-.theme-handdrawn .custom-calendar .rdp-months {
-  background: #ffffff;
-  border: 2px solid #000000;
-  box-shadow: 3px 3px 0 #000000;
-}
-
-.theme-handdrawn .custom-calendar .rdp-day {
-  color: #000000;
-}
-
-.theme-handdrawn .custom-calendar .rdp-day:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(1.1) rotate(3deg);
-}
-
-.theme-handdrawn .custom-calendar .rdp-day_selected {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  box-shadow: 2px 2px 0 #000000;
-}
-
-.theme-handdrawn .custom-calendar .rdp-head_cell {
-  color: #000000;
-  text-decoration: underline;
-}
-
-.theme-handdrawn .custom-calendar .rdp-nav_button {
-  color: #000000;
-  border: 1px solid #000000;
-}
-
-.theme-handdrawn .custom-calendar .rdp-caption {
-  color: #000000;
-  font-weight: bold;
-}
-
-/* Add these theme-specific layouts after the existing CSS */
-
-/* ===== FUTURISTIC THEME LAYOUT ===== */
-.futuristic-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  background: linear-gradient(135deg, rgba(10, 15, 30, 0.8), rgba(20, 30, 60, 0.9));
-  border: 1px solid rgba(0, 200, 255, 0.3);
-  box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.futuristic-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(200, 0, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.futuristic-header {
-  padding: 2rem;
-  border-bottom: 1px solid rgba(0, 200, 255, 0.3);
-  background: linear-gradient(90deg, rgba(10, 15, 30, 0.9), rgba(20, 30, 60, 0.8));
-  position: relative;
-  overflow: hidden;
-}
-
-.futuristic-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.8), transparent);
-}
-
-.futuristic-title-container {
-  text-align: center;
-  position: relative;
-}
-
-.futuristic-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #00c8ff;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
-  position: relative;
-}
-
-.futuristic-title::before,
-.futuristic-title::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.8));
-}
-
-.futuristic-title::before {
-  left: -60px;
-}
-
-.futuristic-title::after {
-  right: -60px;
-  transform: rotate(180deg);
-}
-
-.futuristic-subtitle {
-  color: rgba(0, 200, 255, 0.7);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.futuristic-credits {
-  color: rgba(0, 200, 255, 0.5);
-  font-size: 0.8rem;
-}
-
-.futuristic-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-  padding: 0 1rem 1rem 1rem;
-}
-
-@media (max-width: 768px) {
-  .futuristic-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.futuristic-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(10, 15, 30, 0.7);
-  border: 1px solid rgba(0, 200, 255, 0.2);
-  border-radius: 8px;
-}
-
-.futuristic-input-container,
-.futuristic-toggle-container {
-  background: rgba(20, 30, 60, 0.5);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 200, 255, 0.2);
-}
-
-.futuristic-label {
-  display: flex;
-  align-items: center;
-  color: rgba(0, 200, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-.futuristic-error {
-  color: #ff3860;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.futuristic-main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.futuristic-results-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.futuristic-footer {
-  padding: 1.5rem;
-  border-top: 1px solid rgba(0, 200, 255, 0.3);
-  background: linear-gradient(90deg, rgba(10, 15, 30, 0.9), rgba(20, 30, 60, 0.8));
-}
-
-/* ===== LOCAL THEME LAYOUT ===== */
-.local-container {
-  width: 100%;
-  background: #fff9f0;
-  border: 3px solid #e8a95b;
-  border-radius: 15px;
-  box-shadow: 8px 8px 0 #b86d1d;
-  overflow: hidden;
-  position: relative;
-}
-
-.local-header {
-  padding: 2rem;
-  background: #fff0d9;
-  border-bottom: 3px solid #e8a95b;
-  text-align: center;
-  position: relative;
-}
-
-.local-title-badge {
-  display: inline-block;
-  background: #e8a95b;
-  padding: 0.5rem 2rem;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  box-shadow: 3px 3px 0 #b86d1d;
-  transform: rotate(-2deg);
-}
-
-.local-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 0;
-}
-
-.local-subtitle {
-  color: #b86d1d;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.local-credits {
-  color: #d9a15b;
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-.local-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
-  padding: 1.5rem;
-}
-
-@media (max-width: 1024px) {
-  .local-content {
-    grid-template-columns: 1fr 1fr;
+    transform: translateY(-10px);
   }
 
-  .local-sidebar {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 768px) {
-  .local-content {
-    grid-template-columns: 1fr;
-  }
-
-  .local-sidebar {
-    grid-column: span 1;
-  }
-}
-
-.local-panel {
-  background: #fff;
-  border: 3px solid #e8a95b;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 5px 5px 0 rgba(184, 109, 29, 0.3);
-}
-
-.local-panel-header {
-  background: #e8a95b;
-  padding: 0.75rem 1.5rem;
-  border-bottom: 3px solid #e8a95b;
-}
-
-.local-panel-title {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.local-panel-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.local-toggle-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.local-label {
-  display: flex;
-  align-items: center;
-  color: #b86d1d;
-  font-weight: 500;
-}
-
-.local-error {
-  color: #d63031;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-.local-results {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.local-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* ===== HANDDRAWN THEME LAYOUT ===== */
-.handdrawn-container {
-  width: 100%;
-  position: relative;
-}
-
-.handdrawn-paper {
-  background: #ffffff;
-  border: 2px solid #000000;
-  box-shadow: 8px 8px 0 #000000;
-  padding: 2rem;
-  position: relative;
-}
-
-.handdrawn-paper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%23ffffff'/%3E%3Cpath fill='none' stroke='%23cccccc' stroke-width='0.5' d='M0 10h100M0 20h100M0 30h100M0 40h100M0 50h100M0 60h100M0 70h100M0 80h100M0 90h100'/%3E%3C/svg%3E");
-  opacity: 0.3;
-  z-index: -1;
-}
-
-.handdrawn-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.handdrawn-header::after {
-  content: "";
-  position: absolute;
-  bottom: -1rem;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1c5 0 5-1 10-1s5 1 10 1 5-1 10-1 5 1 10 1 5-1 10-1 5 1 10 1 5-1 10-1' stroke='%23000000' fill='none' stroke-width='1'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-}
-
-.handdrawn-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 0.5rem;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-}
-
-.handdrawn-subtitle {
-  color: #333333;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.handdrawn-credits {
-  color: #666666;
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-.handdrawn-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.handdrawn-input-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .handdrawn-input-section {
-    grid-template-columns: 1fr;
-  }
-}
-
-.handdrawn-input-box,
-.handdrawn-toggle-box {
-  background: #ffffff;
-  border: 2px dashed #000000;
-  padding: 1.5rem;
-  position: relative;
-}
-
-.handdrawn-input-box::before,
-.handdrawn-toggle-box::before {
-  content: "";
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l14 14M1 15L15 1' stroke='%23000000' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-}
-
-.handdrawn-label {
-  color: #000000;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.handdrawn-error {
-  color: #ff0000;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  font-weight: bold;
-}
-
-.handdrawn-results-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.handdrawn-divider {
-  height: 2px;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1c5 0 5-1 10-1s5 1 10 1 5-1 10-1 5 1 10 1 5-1 10-1 5 1 10 1 5-1 10-1' stroke='%23000000' fill='none' stroke-width='1'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  margin: 1rem 0;
-}
-
-.handdrawn-footer {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 2px dashed #000000;
-}
-
-/* Add these theme-specific visibility classes */
-
-/* Hide by default */
-.theme-vintage-only,
-.theme-futuristic-only,
-.theme-local-only,
-.theme-handdrawn-only {
-  display: none;
-}
-
-/* Show only for specific themes */
-.theme-vintage .theme-vintage-only {
-  display: block;
-}
-
-.theme-futuristic .theme-futuristic-only {
-  display: block;
-}
-
-.theme-local .theme-local-only {
-  display: block;
-}
-
-.theme-handdrawn .theme-handdrawn-only {
-  display: block;
-}
-
-/* Remove excessive animations and decorative elements */
-/* Replace the float-animation class with a simpler version */
-
-/* Remove pulse animation from futuristic theme */
-@keyframes pulse-border {
-  0%,
   100% {
-    box-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+    transform: translateY(0px);
   }
 }
 
-/* Simplify the futuristic grid overlay */
-.theme-futuristic .absolute.inset-0 .absolute {
-  display: none; /* Remove grid lines */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+[data-theme="monochrome"] .glass-panel {
+  background: black;
+  border: 1px solid white;
+  backdrop-filter: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
 }
